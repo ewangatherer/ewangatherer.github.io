@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World: Testing the New System - Personal Website</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0056B3',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'opensans': ['Open Sans', 'sans-serif'],
+                    },
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                'h1, h2, h3, h4': {
+                                    fontFamily: 'Montserrat, sans-serif',
+                                    fontWeight: '700'
+                                },
+                                'a': {
+                                    color: '#0056B3',
+                                    '&:hover': {
+                                        color: '#004494'
+                                    }
+                                },
+                                'blockquote': {
+                                    borderLeftColor: '#0056B3'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body class="bg-white">
+    <!-- Sticky Header -->
+    <header class="fixed top-0 w-full bg-primary text-white shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../index.html" class="font-montserrat font-bold text-xl">Your Name</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden" id="mobileMenuBtn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="../index.html#about" class="hover:opacity-80 transition-opacity">About Me</a>
+                <a href="../index.html#articles" class="hover:opacity-80 transition-opacity">Articles</a>
+                <a href="../index.html#projects" class="hover:opacity-80 transition-opacity">Projects</a>
+                <a href="../index.html#contact" class="hover:opacity-80 transition-opacity">Contact</a>
+            </div>
+        </nav>
+        <!-- Mobile Navigation -->
+        <div class="hidden md:hidden" id="mobileMenu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="../index.html#about" class="block hover:opacity-80 transition-opacity py-2">About Me</a>
+                <a href="../index.html#articles" class="block hover:opacity-80 transition-opacity py-2">Articles</a>
+                <a href="../index.html#projects" class="block hover:opacity-80 transition-opacity py-2">Projects</a>
+                <a href="../index.html#contact" class="block hover:opacity-80 transition-opacity py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <article class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Content Header -->
+                <header class="mb-12">
+                    <h1 class="text-4xl md:text-5xl mb-4 font-montserrat font-bold">Hello World: Testing the New System</h1>
+                    <div class="text-gray-600">
+                        <time datetime="Tue Feb 18 2025 19:00:00 GMT-0500 (Eastern Standard Time)">February 18, 2025</time>
+                    </div>
+                    <div class="mt-6 text-xl text-gray-600">A test article to verify our markdown-based content system</div>
+                </header>
+
+                <!-- Content -->
+                <div class="prose prose-lg max-w-none">
+                    <h1>Welcome to the New System</h1>
+<p>This is a test article to verify that our markdown-based content system is working correctly. Let&#39;s test various markdown features:</p>
+<h2>Text Formatting</h2>
+<p>Here&#39;s some <strong>bold text</strong> and some <em>italic text</em>. We can also do <code>inline code</code> like this.</p>
+<h2>Lists</h2>
+<p>Here are some lists:</p>
+<ol>
+<li>First numbered item</li>
+<li>Second numbered item</li>
+<li>Third numbered item</li>
+</ol>
+<p>And bullet points:</p>
+<ul>
+<li>Point one</li>
+<li>Point two</li>
+<li>Point three</li>
+</ul>
+<h2>Code Blocks</h2>
+<pre><code class="language-javascript">// Here&#39;s a code block
+function hello() {
+    console.log(&quot;Hello, World!&quot;);
+}
+</code></pre>
+<h2>Blockquotes</h2>
+<blockquote>
+<p>This is a blockquote to test the styling.<br>It should have a nice blue border on the left.</p>
+</blockquote>
+<h2>Links</h2>
+<p>Here&#39;s <a href="#">a link</a> to test the styling of links in our typography system.</p>
+<h2>Summary</h2>
+<p>If this article renders correctly with proper styling, we know our system is working as intended!</p>
+
+                </div>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2025 Your Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

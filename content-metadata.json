@@ -1,0 +1,28 @@
+{
+  "posts": [
+    {
+      "title": "Cloud Security Best Practices in 2025",
+      "date": "2025-02-19T00:00:00.000Z",
+      "description": "Explore the latest best practices for maintaining robust cloud security in today's rapidly evolving technology landscape.",
+      "category": "Security",
+      "url": "/articles/2025-02-19-cloud-security.html"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Interactive Data Visualization Dashboard",
+      "date": "2025-02-19T00:00:00.000Z",
+      "description": "A responsive, real-time system metrics visualization platform",
+      "technologies": [
+        "React",
+        "D3.js",
+        "TypeScript",
+        "REST API"
+      ],
+      "image": "data-viz-dashboard.jpg",
+      "demo_url": "#",
+      "source_url": "#",
+      "url": "/projects/data-visualization-dashboard.html"
+    }
+  ]
+}

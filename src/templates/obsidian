@@ -1,0 +1,50 @@
+---
+title: "<% tp.file.title %>"
+date: <% tp.date.now("YYYY-MM-DD") %>
+description: ""
+category: ""
+---
+
+<%*
+// Prompt for description
+let description = await tp.system.prompt("Enter article description")
+let category = await tp.system.prompt("Enter article category")
+
+// Update front matter
+tR += `description: "${description}"\n`
+tR += `category: "${category}"\n`
+tR += "---\n\n"
+_%>
+
+# Introduction
+
+[Write your introduction here]
+
+## Background
+
+[Provide context and background information]
+
+## Main Content
+
+[Your main content sections here]
+
+### Section 1
+
+[Content for section 1]
+
+### Section 2
+
+[Content for section 2]
+
+## Key Points
+
+- Point 1
+- Point 2
+- Point 3
+
+## Conclusion
+
+[Summarize key takeaways]
+
+---
+*Last Updated: <% tp.date.now("MMMM D, YYYY") %>*

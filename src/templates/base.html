@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} - Personal Website</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0056B3',
+                    },
+                    fontFamily: {
+                        'montserrat': ['Montserrat', 'sans-serif'],
+                        'opensans': ['Open Sans', 'sans-serif'],
+                    },
+                    typography: {
+                        DEFAULT: {
+                            css: {
+                                'h1, h2, h3, h4': {
+                                    fontFamily: 'Montserrat, sans-serif',
+                                    fontWeight: '700'
+                                },
+                                'a': {
+                                    color: '#0056B3',
+                                    '&:hover': {
+                                        color: '#004494'
+                                    }
+                                },
+                                'blockquote': {
+                                    borderLeftColor: '#0056B3'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body class="bg-white">
+    <!-- Sticky Header -->
+    <header class="fixed top-0 w-full bg-primary text-white shadow-md z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="../index.html" class="font-montserrat font-bold text-xl">Your Name</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden" id="mobileMenuBtn">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="../index.html#about" class="hover:opacity-80 transition-opacity">About Me</a>
+                <a href="../index.html#articles" class="hover:opacity-80 transition-opacity">Articles</a>
+                <a href="../index.html#projects" class="hover:opacity-80 transition-opacity">Projects</a>
+                <a href="../index.html#contact" class="hover:opacity-80 transition-opacity">Contact</a>
+            </div>
+        </nav>
+        <!-- Mobile Navigation -->
+        <div class="hidden md:hidden" id="mobileMenu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="../index.html#about" class="block hover:opacity-80 transition-opacity py-2">About Me</a>
+                <a href="../index.html#articles" class="block hover:opacity-80 transition-opacity py-2">Articles</a>
+                <a href="../index.html#projects" class="block hover:opacity-80 transition-opacity py-2">Projects</a>
+                <a href="../index.html#contact" class="block hover:opacity-80 transition-opacity py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-24 pb-16">
+        <article class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <!-- Content Header -->
+                <header class="mb-12">
+                    <h1 class="text-4xl md:text-5xl mb-4 font-montserrat font-bold">{{title}}</h1>
+                    {{#if date}}
+                    <div class="text-gray-600">
+                        <time datetime="{{date}}">{{formatDate date}}</time>
+                    </div>
+                    {{/if}}
+                    {{#if technologies}}
+                    <div class="flex flex-wrap gap-4 text-sm mt-6">
+                        {{#each technologies}}
+                        <span class="bg-primary text-white px-3 py-1 rounded">{{this}}</span>
+                        {{/each}}
+                    </div>
+                    {{/if}}
+                    {{#if description}}
+                    <div class="mt-6 text-xl text-gray-600">{{description}}</div>
+                    {{/if}}
+                </header>
+
+                <!-- Content -->
+                <div class="prose prose-lg max-w-none">
+                    {{{content}}}
+                </div>
+
+                {{#if source_url}}
+                <!-- Project Links -->
+                <div class="mt-12 flex gap-4">
+                    {{#if demo_url}}
+                    <a href="{{demo_url}}" class="inline-block bg-primary text-white px-6 py-3 rounded hover:opacity-90 transition-opacity">View Live Demo</a>
+                    {{/if}}
+                    <a href="{{source_url}}" class="inline-block border-2 border-primary text-primary px-6 py-3 rounded hover:bg-primary hover:text-white transition-colors">View Source Code</a>
+                </div>
+                {{/if}}
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50">
+        <div class="container mx-auto px-4 py-8">
+            <div class="text-center text-gray-600">
+                <p>&copy; 2025 Your Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

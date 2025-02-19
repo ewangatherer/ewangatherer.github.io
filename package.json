@@ -1,0 +1,23 @@
+{
+  "name": "webpages",
+  "version": "1.0.0",
+  "description": "Personal website with markdown-based content management",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "clean": "rimraf docs/* !docs/.nojekyll",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "personal-website",
+    "markdown",
+    "static-site"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "front-matter": "^4.0.2",
+    "handlebars": "^4.7.8",
+    "marked": "^4.3.0"
+  }
+}
