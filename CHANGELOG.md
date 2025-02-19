@@ -1,5 +1,10 @@
 # Changelog
 
+
+## [0.2.5] - 2025-02-19
+### Changed
+- Changed opacity on .project-overlay from 0 to 0.5 to fix visibility issue
+
 ## [0.2.4] - 2025-02-19
 ### Changed
 - Reorganized project structure for GitHub Pages
